@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Canvas & Typography */
+    --background: 40 20% 99%;         /* Warm luxury ivory/alabaster #FDFCFA */
+    --foreground: 0 0% 8%;            /* Deep rich charcoal #141414 */
+
+    /* Surface Hierarchy */
+    --surface: 0 0% 100%;             /* Pure White #FFFFFF */
+    --surface-raised: 40 10% 96%;     /* Soft warm card surface #F6F5F3 */
+    --surface-overlay: 0 0% 100%;
+
+    /* Brand & Functional Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
+
+    --primary: 0 0% 9%;               /* VÉRONA Signature Noir #171717 */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 40 8% 93%;           /* Pale stone #EEEEEC */
+    --secondary-foreground: 0 0% 12%;
+
+    --muted: 40 5% 91%;
+    --muted-foreground: 0 0% 42%;     /* Slate neutral #6B6B6B */
+
+    --accent: 40 15% 94%;
+    --accent-foreground: 0 0% 12%;
+
+    /* Fashion Accents */
+    --gold: 36 38% 64%;               /* Champagne Gold #C5A880 */
+    --gold-foreground: 0 0% 10%;
+    --sale: 3 68% 46%;                /* Editorial Crimson #C0392B */
+    --sale-foreground: 0 0% 100%;
+
+    --destructive: 3 68% 46%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89%;               /* Subtle divider #E3E3E3 */
+    --input: 0 0% 89%;
+    --ring: 0 0% 12%;
+
+    --radius: 0.375rem;               /* Sleek 6px radius for luxury feel */
+  }
+
+  .dark {
+    --background: 0 0% 6%;
+    --foreground: 40 10% 96%;
+
+    --surface: 0 0% 9%;
+    --surface-raised: 0 0% 12%;
+    --surface-overlay: 0 0% 14%;
+
+    --card: 0 0% 9%;
+    --card-foreground: 40 10% 96%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 40 10% 96%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 0 0% 14%;
+    --accent-foreground: 0 0% 98%;
+
+    --gold: 36 38% 64%;
+    --gold-foreground: 0 0% 10%;
+    --sale: 3 68% 54%;
+    --sale-foreground: 0 0% 100%;
+
+    --destructive: 3 68% 54%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 0% 80%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-neutral-900 selection:text-neutral-50;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Accessible Focus Ring */
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
